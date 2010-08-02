@@ -31,7 +31,7 @@ python setup.py install
 
 IV. EXAMPLE USAGE (command line):
 -----------------------------------------------------------------
-$ ./BlindElephant.py 
+$ python BlindElephant.py 
 Error: url and appName are required arguments unless using -l, -u, or -h
 
 Usage: BlindElephant.py [options] url appName
@@ -53,7 +53,7 @@ Options:
 Use "guess" as app or plugin name to attempt to attempt to
 discover which supported apps/plugins are installed.
 
-$ ./BlindElephant.py http://laws.qualys.com movabletype
+$ python BlindElephant.py http://laws.qualys.com movabletype
 Loaded /usr/local/lib/python2.6/dist-packages/blindelephant/dbs/movabletype.pkl with 96 versions, 2229 differentiating paths, and 209 version groups.
 Starting BlindElephant fingerprint for version of movabletype at http://laws.qualys.com 
 
