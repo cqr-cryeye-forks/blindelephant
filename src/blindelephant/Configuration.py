@@ -169,4 +169,14 @@ APP_CONFIG =   { "joomla" : {"versionDirectoryRegex" : "Joomla_([\d.]+).*",
                            "fileExcludeRegex": ".*\.(?:php|php3|html)$",
                            "indicatorFiles" : ["/dist/ical.html", "/squelettes-dist/ical.html", "/ecrire/gpl_fr.txt"]
                            },
+                 "twiki" : {"versionDirectoryRegex" : "TWiki-(.*)",
+                           "directoryExcludeRegex" : "lib|bin|tools|templates|locale|data|foo",
+                           "fileExcludeRegex": ".*\.(?:pm|pl|.sh)$",
+                           "indicatorFiles" : ['/pub/TWiki/TWikiDocGraphics/sitemap.gif', '/pub/TWiki/TinyMCEPlugin/tinymce/docs/index.html', '/COPYING', '/pub/TWiki/JSCalendarContrib/lang/calendar-fi.js', '/pub/TWiki/TWikiDocGraphics/mail.gif', '/LICENSE']
+                           },                           
+                 "tikiwiki" : {"versionDirectoryRegex" : "tiki(?:wiki)?-(.*)",
+                               "directoryExcludeRegex" : "backups|bin|db|error|templates|templates_c",
+                               "fileExcludeRegex": ".*\.(?:php|php3|.sh)$",
+                               "indicatorFiles" : ['/images/ico_clear.gif', '/lib/Galaxia/img/icons/mini_square.gif', '/img/icons/friend.gif', '/lib/Galaxia/img/icons/mini_blue_circle.gif']
+                               },
 }

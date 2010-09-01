@@ -84,10 +84,15 @@ def computeTables(basepath, versionDirectoryRegex="", directoryExcludeRegex="", 
             files = filter(lambda d:not re.match(fileExcludeRegex,d), files)
             #print "files after:", files
 
+            toremove = []
             for dir in dirs:
+                #print "checking dir against directoryExcludeRegex:", join(root, dir), directoryExcludeRegex
                 if re.match(directoryExcludeRegex, dir):
                     #print "Dropping dir: ", join(root, dir)
-                    dirs.remove(dir)
+                    toremove.append(dir)
+            for dir in toremove:
+                dirs.remove(dir)
+            
 
             #compute hashes for all files
             for name in files:
