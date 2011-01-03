@@ -37,7 +37,7 @@ if __name__ == '__main__':
         quit()
     
     url = args[0].strip("/")
-    if not url.startswith("http://"):
+    if not (url.startswith("http://") or url.startswith("https://")):
         url = "http://" + url
     app_name = args[1]
 

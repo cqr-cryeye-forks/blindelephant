@@ -160,7 +160,7 @@ APP_CONFIG =   { "joomla" : {"versionDirectoryRegex" : "Joomla_([\d.]+).*",
                               "indicatorFiles" : ["/html/common/null.html", "/html/sound/mail/new_mail_1.wav", "/html/js/editor/fckeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js", "/html/themes/classic/images/liferay.ico"]
                              },
                  "phpmyadmin" : {"versionDirectoryRegex" : "phpMyAdmin-(.*)",
-                                 "directoryExcludeRegex" : "libraries",
+                                 "directoryExcludeRegex" : "libraries|scripts",
                                  "fileExcludeRegex": ".*\.(?:php|php3|htaccess)$",
                                  "indicatorFiles" : ["/Documentation.txt", "/images/fulltext.png", "/translators.html", "/scripts/remove_control_m.sh", "/lang/remove_message.sh"]
                                 },
@@ -179,4 +179,11 @@ APP_CONFIG =   { "joomla" : {"versionDirectoryRegex" : "Joomla_([\d.]+).*",
                                "fileExcludeRegex": ".*\.(?:php|php3|.sh)$",
                                "indicatorFiles" : ['/images/ico_clear.gif', '/lib/Galaxia/img/icons/mini_square.gif', '/img/icons/friend.gif', '/lib/Galaxia/img/icons/mini_blue_circle.gif']
                                },
+                  "confluence" : {"versionDirectoryRegex" : "confluence-(.*)", 
+                               "directoryExcludeRegex" : "WEB-INF",
+                               "fileExcludeRegex": ".*\.(?:xml|jar|jsp|vm)$",
+                               "indicatorFiles" : ['/images/raw/open-active.png', '/images/icons/arrow_block_16.gif', '/images/icons/list_pages_16.gif', '/images/icons/bullet_inprogress.gif']
+                               },
+                               
 }
+
