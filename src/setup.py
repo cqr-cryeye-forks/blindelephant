@@ -9,6 +9,7 @@ setup(
     url='http://blindelephant.sourceforge.net',
     packages=['blindelephant'],
     package_data={'blindelephant' : ['dbs/*.pkl', 'dbs/*/*.pkl']},
+    scripts=['blindelephant/BlindElephant.py'],
     classifiers = [
         "Development Status :: 2 - Pre-Alpha",
         "Environment :: Console",
