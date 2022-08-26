@@ -45,11 +45,11 @@ async def _parse_supported_items(data: List[str]) -> Dict[str, List[str]]:
     pattern__plugin = re.compile(r'\s-\s(?P<plugin>[\w-]+)')
     flag__configured = False
     app_dict = {}
+    web_app = ''
     for line in data:
         if not flag__configured and line.startswith(pattern__configured):
             flag__configured = True
             continue
-        web_app = None
         if is_web_app := re.match(pattern__web_app, line):
             web_app = is_web_app['web_app']
             app_dict[web_app] = []
@@ -127,7 +127,7 @@ async def main():
     except KeyError:
         APP_DIR = pathlib.Path(__file__).parent
     python_for_app_path = APP_DIR.joinpath("venv", "bin", "python") if parsed_args.venv else 'python'
-    tool_path = APP_DIR.joinpath("blindelephant", "BlindElephant.py")
+    tool_path = APP_DIR.joinpath("src", "blindelephant", "BlindElephant.py")
 
     target_url = parsed_args.url
     web_app = parsed_args.web_app
