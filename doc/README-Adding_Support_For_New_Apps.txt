@@ -51,7 +51,7 @@ Unpacker scripts live in tools/ (for version control purposes), but get copied i
 
 
 6) Update/create fingerprint datafiles
-python LatestVersionFetcher.py --updateDBs twiki
+python LatestVersionFetcher.py --update_dbs twiki
 
 
 7) Choose indicator files (this step is a holdover from a previous more manual method that we hope to get away from. In the future this will probably be done automatically at runtime unless overridden)
@@ -61,8 +61,8 @@ python
 import DifferencesTables as dt
 import FingerprintUtils as fu
 import Configuration as c
-pathNodes, versionNodes, allVersions = dt.loadTables(c.getDbPath("twiki"), printStats=True, useCaching=False)
-fu.pick_indicator_files(versionNodes, allVersions)
+pathNodes, versionNodes, all_versions = dt.loadTables(c.getDbPath("twiki"), printStats=True, useCaching=False)
+fu.pick_indicator_files(versionNodes, all_versions)
 ['/pub/TWiki/TWikiDocGraphics/sitemap.gif', '/pub/TWiki/TinyMCEPlugin/tinymce/docs/index.html', '/COPYING', '/pub/TWiki/JSCalendarContrib/lang/calendar-fi.js', '/pub/TWiki/TWikiDocGraphics/mail.gif', '/LICENSE']
 Paste the result into the indicatorFiles key of the webapp config entry.
 
