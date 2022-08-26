@@ -8,12 +8,6 @@ from helpers._utils import print_log
 from helpers.save_to_file import save_data_to_file
 
 
-async def main_processing(tool_path: pathlib.Path, local_path: pathlib.Path,
-                          python_path: pathlib.Path,
-                          target: str):
-    return
-
-
 async def cli():
     """Command Line Interface
     """
@@ -35,6 +29,11 @@ async def cli():
                         metavar='PATH',
                         dest="result_path",
                         help='Path to saving result')
+
+    parser.add_argument('-v', '--venv',
+                        action='store_true',
+                        default=False,
+                        help='run as venv')
 
     return parser.parse_args()
 
@@ -123,7 +122,7 @@ async def main():
     parsed_args = await cli()
 
     APP_DIR = pathlib.Path(os.environ['APP_DIR'])
-    python_for_app_path = APP_DIR.joinpath("venv", "bin", "python")
+    python_for_app_path = APP_DIR.joinpath("venv", "bin", "python") if parsed_args.venv else 'python'
     tool_path = APP_DIR.joinpath("blindelephant", "BlindElephant.py")
 
     target_url = parsed_args.url
