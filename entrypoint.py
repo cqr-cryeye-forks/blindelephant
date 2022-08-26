@@ -28,6 +28,7 @@ async def cli():
                         type=pathlib.Path,
                         metavar='PATH',
                         dest="result_path",
+                        default='output.json',
                         help='Path to saving result')
 
     parser.add_argument('-v', '--venv',
@@ -121,7 +122,10 @@ async def main():
     # [init_params]-[BEGIN]
     parsed_args = await cli()
 
-    APP_DIR = os.environ['APP_DIR'] or pathlib.Path(__file__).parent
+    try:
+        APP_DIR = os.environ['APP_DIR']
+    except KeyError:
+        APP_DIR = pathlib.Path(__file__).parent
     python_for_app_path = APP_DIR.joinpath("venv", "bin", "python") if parsed_args.venv else 'python'
     tool_path = APP_DIR.joinpath("blindelephant", "BlindElephant.py")
 
