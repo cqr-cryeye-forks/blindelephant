@@ -2,7 +2,8 @@
 import os
 from optparse import OptionParser
 
-from src.blindelephant import Configuration, Fingerprinters
+import Configuration
+import Fingerprinters
 
 if __name__ == '__main__':
 

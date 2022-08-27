@@ -1,7 +1,8 @@
 import datetime
 from optparse import OptionParser
 
-from . import Fingerprinters, Loggers
+import Fingerprinters
+import Loggers
 
 
 class ScannerResult(object):

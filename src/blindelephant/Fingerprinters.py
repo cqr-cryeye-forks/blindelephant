@@ -8,8 +8,11 @@ import urllib.parse
 import urllib.request
 from http.client import HTTPException
 
-from . import DifferencesTables, Configuration as Configuration, FileMassagers, FingerprintUtils
-from .Loggers import FileLogger
+import DifferencesTables
+import Configuration
+import FileMassagers
+import FingerprintUtils
+from Loggers import FileLogger
 
 # Number of consecutive low-level communication failures to tolerate before giving up
 HOST_DOWN_THRESHOLD = 2
